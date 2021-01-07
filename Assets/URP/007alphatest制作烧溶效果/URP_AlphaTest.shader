@@ -34,7 +34,6 @@
         struct a2v
         {
             float4 positionOS : POSITION;
-            float4 normalOS: NORMAL;
             float2 texcoord:TEXCOORD;
         };
 
