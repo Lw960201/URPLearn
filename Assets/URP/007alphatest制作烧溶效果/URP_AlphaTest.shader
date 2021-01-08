@@ -70,7 +70,9 @@
             half4 frag(v2f i) : SV_Target
             {
                 half4 tex = SAMPLE_TEXTURE2D(_MainTex,sampler_MainTex,i.texcoord.xy)*_BaseColor;
-                clip(step(_Cutoff,tex.r)-0.01);
+                clip(step(_Cutoff,tex.r)-0.01);//使用step函数是为了更好得配合下面代码的lerp函数，只是为了凑个lerp的第三个参数，让tex.r可以作为控制参数
+                //再次使用了step函数，但是将step函数的两个变量调换位置，这样就会得到与上面函数的值相反的区间，
+                //注意我的_Cutoff+0.1是为了让它稍微偏移一点点并非100%与上面clip相反，它两是有一丢丢的相交部分，这就是火焰的边缘烧灼的部分了，在来个lerp，即可得到我们想要的结果。
                 tex = lerp(tex,_BurnColor,step(tex.r,saturate(_Cutoff+0.1)));
                 return tex;
             }
