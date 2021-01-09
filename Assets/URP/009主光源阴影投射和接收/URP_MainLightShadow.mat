@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: URP_MultiLight
-  m_Shader: {fileID: 4800000, guid: 30f52be956dffe1498c5e31046afef8c, type: 3}
+  m_Name: URP_MainLightShadow
+  m_Shader: {fileID: 4800000, guid: 0d37b3408bd3450469d166e681a20e6e, type: 3}
   m_ShaderKeywords: _ADD_LIGHT_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -34,6 +34,7 @@ Material:
     m_Floats:
     - _ADD_LIGHT: 0
     - _Cutoff: 0.71
+    - _Gloss: 58
     - _NormalScale: 1
     - _SpecularRange: 42
     m_Colors:
